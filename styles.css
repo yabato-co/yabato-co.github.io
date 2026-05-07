@@ -381,6 +381,19 @@ footer {
   object-fit: contain;
 }
 
+.monevia-hero-visual {
+  justify-self: end;
+  width: min(100%, 520px);
+  margin-right: -62px;
+  filter: drop-shadow(0 26px 52px rgba(15, 23, 42, 0.18));
+}
+
+.monevia-hero-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .monevia-kpi-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -632,6 +645,12 @@ footer {
     justify-self: start;
   }
 
+  .monevia-hero-visual {
+    justify-self: center;
+    width: min(100%, 560px);
+    margin: 8px auto 0;
+  }
+
   .feature-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -729,6 +748,13 @@ footer {
     max-width: 168px;
     min-height: 188px;
     border-radius: 26px;
+  }
+
+  .monevia-hero-visual {
+    width: 112%;
+    max-width: none;
+    margin-left: -6%;
+    margin-right: -6%;
   }
 
   .feature-grid {
