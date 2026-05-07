@@ -122,8 +122,8 @@ main {
 
 .home-hero-visual {
   justify-self: end;
-  width: min(118%, 720px);
-  margin-right: -118px;
+  width: min(108%, 660px);
+  margin-right: -82px;
   filter: drop-shadow(0 34px 68px rgba(15, 23, 42, 0.18));
 }
 
@@ -651,8 +651,8 @@ footer {
 
   .home-hero-visual {
     justify-self: center;
-    width: min(112%, 720px);
-    margin: 6px -6% 0;
+    width: min(104%, 660px);
+    margin: 6px -2% 0;
   }
 
   .app-hero {
@@ -764,9 +764,9 @@ footer {
   }
 
   .home-hero-visual {
-    width: 132%;
-    margin-left: -16%;
-    margin-right: -16%;
+    width: 118%;
+    margin-left: -9%;
+    margin-right: -9%;
   }
 
   .feature-grid {
