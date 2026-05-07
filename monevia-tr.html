@@ -90,6 +90,34 @@
       </div>
     </section>
 
+    <section class="section screenshots-section">
+      <div class="section-heading">
+        <p class="eyebrow">Önizleme</p>
+        <h2>Günlük para kararların için net bir dashboard.</h2>
+      </div>
+
+      <div class="screenshot-carousel-wrap">
+        <button class="scroll-cue left" type="button" aria-label="Önceki ekran görüntüleri" data-scroll-left>&lt;</button>
+
+        <div class="screenshots" id="moneviaScreenshots">
+          <button class="screenshot-button" type="button" data-full="monevia-screenshot-1.png" aria-label="Monevia ana ekran görüntüsünü aç">
+            <img src="monevia-screenshot-1.png" alt="Monevia ana ekran görüntüsü" />
+          </button>
+          <button class="screenshot-button" type="button" data-full="monevia-screenshot-2.png" aria-label="Monevia giderler ekran görüntüsünü aç">
+            <img src="monevia-screenshot-2.png" alt="Monevia giderler ekran görüntüsü" />
+          </button>
+          <button class="screenshot-button" type="button" data-full="monevia-screenshot-3.png" aria-label="Monevia gelirler ekran görüntüsünü aç">
+            <img src="monevia-screenshot-3.png" alt="Monevia gelirler ekran görüntüsü" />
+          </button>
+          <button class="screenshot-button" type="button" data-full="monevia-screenshot-4.png" aria-label="Monevia istatistik ekran görüntüsünü aç">
+            <img src="monevia-screenshot-4.png" alt="Monevia istatistik ekran görüntüsü" />
+          </button>
+        </div>
+
+        <button class="scroll-cue right" type="button" aria-label="Sonraki ekran görüntüleri" data-scroll-right>&gt;</button>
+      </div>
+    </section>
+
     <section class="section split">
       <div>
         <p class="eyebrow">Nasıl çalışır?</p>
@@ -114,8 +142,62 @@
     </section>
   </main>
 
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" type="button" aria-label="Önizlemeyi kapat">x</button>
+    <img id="lightboxImage" src="" alt="Monevia ekran görüntüsü önizlemesi" />
+  </div>
+
   <footer>
     <p>&copy; 2026 Yabato Co. Tüm hakları saklıdır.</p>
   </footer>
+
+  <script>
+    const screenshots = document.getElementById("moneviaScreenshots");
+    const leftButton = document.querySelector("[data-scroll-left]");
+    const rightButton = document.querySelector("[data-scroll-right]");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightboxImage");
+    const closeButton = document.querySelector(".lightbox-close");
+
+    function scrollScreenshots(direction) {
+      if (!screenshots) return;
+      const distance = screenshots.clientWidth * 0.92;
+      screenshots.scrollBy({
+        left: direction * distance,
+        behavior: "smooth"
+      });
+    }
+
+    leftButton?.addEventListener("click", () => scrollScreenshots(-1));
+    rightButton?.addEventListener("click", () => scrollScreenshots(1));
+
+    document.querySelectorAll(".screenshot-button").forEach((button) => {
+      button.addEventListener("click", () => {
+        lightboxImage.src = button.dataset.full;
+        lightbox.classList.add("is-open");
+        lightbox.setAttribute("aria-hidden", "false");
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove("is-open");
+      lightbox.setAttribute("aria-hidden", "true");
+      lightboxImage.src = "";
+    }
+
+    closeButton?.addEventListener("click", closeLightbox);
+
+    lightbox?.addEventListener("click", (event) => {
+      if (event.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && lightbox.classList.contains("is-open")) {
+        closeLightbox();
+      }
+    });
+  </script>
 </body>
 </html>
