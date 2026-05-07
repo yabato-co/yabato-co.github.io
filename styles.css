@@ -110,8 +110,27 @@ main {
 .hero {
   min-height: 72vh;
   display: grid;
-  align-content: center;
+  grid-template-columns: minmax(0, 0.92fr) minmax(420px, 1.08fr);
+  gap: 34px;
+  align-items: center;
   padding: 90px 0 70px;
+}
+
+.hero-copy {
+  min-width: 0;
+}
+
+.home-hero-visual {
+  justify-self: end;
+  width: min(118%, 720px);
+  margin-right: -118px;
+  filter: drop-shadow(0 34px 68px rgba(15, 23, 42, 0.18));
+}
+
+.home-hero-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .eyebrow {
@@ -381,19 +400,6 @@ footer {
   object-fit: contain;
 }
 
-.monevia-hero-visual {
-  justify-self: end;
-  width: min(100%, 520px);
-  margin-right: -62px;
-  filter: drop-shadow(0 26px 52px rgba(15, 23, 42, 0.18));
-}
-
-.monevia-hero-visual img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
 .monevia-kpi-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -630,10 +636,23 @@ footer {
   main,
   .site-header,
   .section,
+  .hero,
   .app-hero,
   .screenshots-section,
   .screenshot-carousel-wrap {
     max-width: 100%;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 34px;
+    overflow: hidden;
+  }
+
+  .home-hero-visual {
+    justify-self: center;
+    width: min(112%, 720px);
+    margin: 6px -6% 0;
   }
 
   .app-hero {
@@ -643,12 +662,6 @@ footer {
 
   .hero-phone-card {
     justify-self: start;
-  }
-
-  .monevia-hero-visual {
-    justify-self: center;
-    width: min(100%, 560px);
-    margin: 8px auto 0;
   }
 
   .feature-grid {
@@ -750,11 +763,10 @@ footer {
     border-radius: 26px;
   }
 
-  .monevia-hero-visual {
-    width: 112%;
-    max-width: none;
-    margin-left: -6%;
-    margin-right: -6%;
+  .home-hero-visual {
+    width: 132%;
+    margin-left: -16%;
+    margin-right: -16%;
   }
 
   .feature-grid {
