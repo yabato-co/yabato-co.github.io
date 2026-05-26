@@ -482,6 +482,38 @@ footer {
   gap: 18px;
 }
 
+.core-download-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  align-items: center;
+  gap: 34px;
+}
+
+.qr-download-card {
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: #ffffff;
+  box-shadow: var(--shadow);
+  color: var(--text);
+  text-decoration: none;
+}
+
+.qr-download-card img {
+  display: block;
+  width: 172px;
+  height: 172px;
+  border-radius: 18px;
+}
+
+.qr-download-card span {
+  font-weight: 900;
+  color: var(--text);
+}
+
 .feature-grid .principle {
   min-height: 170px;
   background: #ffffff;
@@ -668,6 +700,14 @@ footer {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .core-download-section {
+    grid-template-columns: 1fr;
+  }
+
+  .qr-download-card {
+    justify-self: start;
+  }
+
   .monevia-kpi-grid {
     grid-template-columns: 1fr;
   }
@@ -771,6 +811,10 @@ footer {
 
   .feature-grid {
     grid-template-columns: 1fr;
+  }
+
+  .qr-download-card {
+    width: 100%;
   }
 
   .screenshots {
