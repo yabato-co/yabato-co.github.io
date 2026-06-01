@@ -613,23 +613,16 @@ footer {
 .fixsend-app-hero::before {
   content: "";
   position: absolute;
-  inset: -18% -18% -12% 24%;
+  inset: -112px calc((100vw - 100%) / -2) -6% calc((100vw - 100%) / -2);
   z-index: -1;
-  background: url("fixsend-hero-bg.png?v=1") center / contain no-repeat;
-  opacity: 0.24;
-  filter: blur(0.2px) saturate(0.95);
+  background: url("fixsend-hero-bg.png?v=2") center top / cover no-repeat;
+  opacity: 0.18;
+  filter: none;
   pointer-events: none;
 }
 
 .fixsend-app-hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background:
-    radial-gradient(circle at 78% 24%, rgba(92, 108, 255, 0.12), transparent 28rem),
-    linear-gradient(90deg, rgba(246, 242, 234, 0.94) 0%, rgba(246, 242, 234, 0.72) 48%, rgba(246, 242, 234, 0.48) 100%);
-  pointer-events: none;
+  content: none;
 }
 
 .hero-phone-card {
@@ -992,9 +985,9 @@ footer {
   }
 
   .fixsend-app-hero::before {
-    inset: 18% -20% -10% -8%;
-    opacity: 0.16;
-    background-size: 120%;
+    inset: -104px -18px -8% -18px;
+    opacity: 0.14;
+    background-size: cover;
   }
 
   .hero-phone-card {
@@ -1111,9 +1104,9 @@ footer {
   }
 
   .fixsend-app-hero::before {
-    inset: 26% -28% -8% -24%;
-    opacity: 0.13;
-    background-size: 145%;
+    inset: -94px -14px -8% -14px;
+    opacity: 0.12;
+    background-size: cover;
   }
 
   .hero-phone-card {
