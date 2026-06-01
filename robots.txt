@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yabato-co.github.io/sitemap.xml
