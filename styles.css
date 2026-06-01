@@ -469,17 +469,6 @@ h3 {
   box-shadow: 0 14px 34px rgba(35, 30, 20, 0.08);
 }
 
-.fixsend-icon {
-  display: grid;
-  place-items: center;
-  color: #ffffff;
-  background:
-    radial-gradient(circle at 30% 18%, rgba(255, 255, 255, 0.34), transparent 24%),
-    linear-gradient(135deg, #2f55ff 0%, #1e3fe0 58%, #17b98f 100%);
-  font-size: 1.35rem;
-  font-weight: 900;
-  letter-spacing: -0.08em;
-}
 
 .app-label {
   margin-bottom: 6px;
@@ -624,10 +613,6 @@ footer {
   padding: 10px;
   background: #ffffff;
   object-fit: contain;
-}
-
-.hero-phone-card.fixsend-card .fixsend-icon {
-  margin-bottom: 10px;
 }
 
 .monevia-kpi-grid {
