@@ -118,19 +118,169 @@ main {
 
 .hero-copy {
   min-width: 0;
+  animation: heroFadeUp 760ms ease both;
 }
 
-.home-hero-visual {
+.hero-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero-kicker span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #19c37d;
+  box-shadow: 0 0 0 0 rgba(25, 195, 125, 0.42);
+  animation: livePulse 1.8s ease-in-out infinite;
+}
+
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.hero-badges span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  padding: 0 14px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.78);
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 800;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+}
+
+.home-hero-stage {
+  position: relative;
   justify-self: end;
-  width: min(108%, 660px);
-  margin-right: -82px;
-  filter: drop-shadow(0 34px 68px rgba(15, 23, 42, 0.18));
+  width: min(116%, 760px);
+  margin-right: -118px;
+  animation: heroFadeIn 900ms ease 120ms both;
 }
 
-.home-hero-visual img {
+.home-hero-image {
   display: block;
   width: 100%;
   height: auto;
+  filter: drop-shadow(0 34px 68px rgba(15, 23, 42, 0.22));
+  animation: heroFloat 6.5s ease-in-out infinite;
+}
+
+.hero-glow {
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(28px);
+  opacity: 0.42;
+  animation: glowDrift 7s ease-in-out infinite;
+}
+
+.hero-glow-one {
+  width: 280px;
+  height: 280px;
+  right: 74px;
+  top: 68px;
+  background: rgba(20, 184, 166, 0.22);
+}
+
+.hero-glow-two {
+  width: 220px;
+  height: 220px;
+  left: 62px;
+  bottom: 46px;
+  background: rgba(15, 23, 42, 0.16);
+  animation-delay: -2s;
+}
+
+.hero-qr-card {
+  position: absolute;
+  right: 34px;
+  bottom: 34px;
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  width: 136px;
+  padding: 12px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 20px 46px rgba(15, 23, 42, 0.16);
+  color: var(--text);
+  text-decoration: none;
+  backdrop-filter: blur(18px);
+  animation: heroFadeUp 820ms ease 360ms both;
+}
+
+.hero-qr-card img {
+  display: block;
+  width: 98px;
+  height: 98px;
+  border-radius: 14px;
+}
+
+.hero-qr-card span {
+  font-size: 0.74rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(18px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes heroFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(0.4deg);
+  }
+}
+
+@keyframes livePulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(25, 195, 125, 0.42);
+  }
+  70% {
+    box-shadow: 0 0 0 9px rgba(25, 195, 125, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(25, 195, 125, 0);
+  }
+}
+
+@keyframes glowDrift {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(12px, -10px, 0) scale(1.06);
+  }
 }
 
 .eyebrow {
@@ -681,10 +831,15 @@ footer {
     overflow: hidden;
   }
 
-  .home-hero-visual {
+  .home-hero-stage {
     justify-self: center;
-    width: min(104%, 660px);
-    margin: 6px -2% 0;
+    width: min(108%, 720px);
+    margin: 6px -4% 0;
+  }
+
+  .hero-qr-card {
+    right: 22px;
+    bottom: 18px;
   }
 
   .app-hero {
@@ -803,10 +958,28 @@ footer {
     border-radius: 26px;
   }
 
-  .home-hero-visual {
-    width: 118%;
-    margin-left: -9%;
-    margin-right: -9%;
+  .home-hero-stage {
+    width: 124%;
+    margin-left: -12%;
+    margin-right: -12%;
+  }
+
+  .hero-qr-card {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    max-width: 220px;
+    margin: -18px auto 0;
+  }
+
+  .hero-qr-card img {
+    width: 112px;
+    height: 112px;
+  }
+
+  .hero-badges span {
+    font-size: 0.82rem;
   }
 
   .feature-grid {
@@ -833,5 +1006,16 @@ footer {
   .feature-banner,
   .feature-banner img {
     max-width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-copy,
+  .home-hero-stage,
+  .home-hero-image,
+  .hero-glow,
+  .hero-qr-card,
+  .hero-kicker span {
+    animation: none;
   }
 }
