@@ -469,6 +469,18 @@ h3 {
   box-shadow: 0 14px 34px rgba(35, 30, 20, 0.08);
 }
 
+.fixsend-icon {
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  background:
+    radial-gradient(circle at 30% 18%, rgba(255, 255, 255, 0.34), transparent 24%),
+    linear-gradient(135deg, #2f55ff 0%, #1e3fe0 58%, #17b98f 100%);
+  font-size: 1.35rem;
+  font-weight: 900;
+  letter-spacing: -0.08em;
+}
+
 .app-label {
   margin-bottom: 6px;
   color: var(--muted);
@@ -614,6 +626,10 @@ footer {
   object-fit: contain;
 }
 
+.hero-phone-card.fixsend-card .fixsend-icon {
+  margin-bottom: 10px;
+}
+
 .monevia-kpi-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -690,6 +706,16 @@ footer {
   display: block;
   width: 100%;
   border-radius: 32px;
+}
+
+.feature-banner.product-photo {
+  background:
+    radial-gradient(circle at 50% 12%, rgba(92, 108, 255, 0.16), transparent 30rem),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(255, 247, 232, 0.54));
+}
+
+.feature-banner.product-photo img {
+  object-fit: cover;
 }
 
 .feature-grid {
