@@ -694,13 +694,17 @@ footer {
 }
 
 .feature-banner.product-photo {
-  background:
-    radial-gradient(circle at 50% 12%, rgba(92, 108, 255, 0.16), transparent 30rem),
-    linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(255, 247, 232, 0.54));
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  overflow: visible;
 }
 
 .feature-banner.product-photo img {
-  object-fit: cover;
+  border-radius: 0;
+  object-fit: contain;
+  filter: drop-shadow(0 28px 54px rgba(35, 30, 20, 0.11));
 }
 
 .feature-grid {
